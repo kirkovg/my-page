@@ -64,25 +64,25 @@ const generateTextForHelp = (currentId: number): ITerminalRow[] => {
       id: currentId + 2,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  clear     -  clear the terminal screen',
+      value: '  cv        -  prints out my work experience',
     },
     {
       id: currentId + 3,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  cv        -  prints out my work experience',
+      value: `  tech      -  prints out the technologies I've worked with`,
     },
     {
       id: currentId + 4,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: `  tech      -  prints out the technologies I've worked with`,
+      value: `  social    -  social media presence`,
     },
     {
       id: currentId + 5,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: `  social    -  social media presence`,
+      value: '  clear     -  clear the terminal screen',
     },
   ];
 };
