@@ -1,12 +1,4 @@
-/* TODO GJK: cleanup? */
-/* body {
-  max-width: 1280px;
-  margin: 0 auto;
+.App {
+  max-width: 100vw;
   padding: 2rem;
-  background: #0f0f23;
-  color: #cccccc;
 }
-
-#root {
-  text-align: center;
-} */

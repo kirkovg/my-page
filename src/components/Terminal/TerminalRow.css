@@ -1,0 +1,18 @@
+.terminal-row {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  background-color: inherit;
+  height: 24px;
+  border: none;
+  color: #cccccc;
+  font-family: inherit;
+  font-size: inherit;
+  caret-color: transparent;
+  width: 100%;
+}
+
+.terminal-row:focus {
+
+  /* TODO GJK: just for debugging - remove later */
+  border: yellow; 
+}
