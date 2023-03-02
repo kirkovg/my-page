@@ -11,6 +11,8 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
     return (
       <div className="terminal-row">
         <input id={row.id.toString()} type="text" defaultValue={row.value} />
+        {row.href && <a href={row.href}>{row.href}</a>}
+        {/* TODO GJK: fix styling for hrefs */}
       </div>
     );
   }

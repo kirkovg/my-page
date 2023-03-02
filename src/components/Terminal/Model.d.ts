@@ -7,4 +7,5 @@ type ITerminalRow = {
   active: boolean;
   value: string;
   type: 'COMMAND' | 'CUSTOM_TEXT';
+  href?: string;
 };
