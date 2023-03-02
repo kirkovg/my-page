@@ -1,1 +1,1 @@
-## Personal page about me styled as interactive Terminal app
+## Personal page about me styled as an interactive Terminal app
