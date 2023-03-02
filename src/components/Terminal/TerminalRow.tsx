@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './TerminalRow.css';
 
 type TerminalRowProps = {
@@ -8,22 +7,32 @@ type TerminalRowProps = {
 };
 
 export function TerminalRow({ row, updateCommandValue, commandEntered }: TerminalRowProps) {
+  if (row.type === 'CUSTOM_TEXT') {
+    return (
+      <div className="terminal-row">
+        <input id={row.id.toString()} type="text" defaultValue={row.value} />
+      </div>
+    );
+  }
+
   return (
-    <input
-      id={row.id.toString()}
-      type="text"
-      className="terminal-row"
-      value={row.value}
-      onKeyUp={e => {
-        if (e.key === 'Enter') {
-          commandEntered(row);
-        }
-      }}
-      onChange={e => {
-        if (row.active) {
-          updateCommandValue(e.target.value, row.id);
-        }
-      }}
-    />
+    <div className="terminal-row">
+      <span>&gt;&nbsp;</span>
+      <input
+        id={row.id.toString()}
+        type="text"
+        value={row.value}
+        onKeyUp={e => {
+          if (e.key === 'Enter') {
+            commandEntered(row);
+          }
+        }}
+        onChange={e => {
+          if (row.active) {
+            updateCommandValue(e.target.value, row.id);
+          }
+        }}
+      />
+    </div>
   );
 }

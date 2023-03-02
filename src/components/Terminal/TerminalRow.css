@@ -1,4 +1,9 @@
 .terminal-row {
+  width: 100%;
+}
+
+.terminal-row > input {
+  caret-color: transparent;
   margin-top: 8px;
   margin-bottom: 8px;
   background-color: inherit;
@@ -7,12 +12,10 @@
   color: #cccccc;
   font-family: inherit;
   font-size: inherit;
-  caret-color: transparent;
-  width: 100%;
+  width: 80%;
 }
 
 .terminal-row:focus {
-
   /* TODO GJK: just for debugging - remove later */
   border: yellow; 
 }

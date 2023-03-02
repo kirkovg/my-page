@@ -8,7 +8,7 @@ const defaultState: ITerminalState = {
       id: 1,
       type: 'COMMAND',
       active: true,
-      value: '> ',
+      value: '',
     },
   ],
 };
@@ -18,13 +18,13 @@ const createNewEmptyCommand = (currentId: number): ITerminalRow => {
     id: currentId + 1,
     type: 'COMMAND',
     active: true,
-    value: '> ',
+    value: '',
   };
 };
 
 const createCommandsBasedOnAction = (executedCommand: ITerminalRow, currentId: number): ITerminalRow[] => {
   switch (executedCommand.value) {
-    case '> help': {
+    case 'help': {
       return [
         {
           id: currentId + 1,
@@ -36,29 +36,42 @@ const createCommandsBasedOnAction = (executedCommand: ITerminalRow, currentId: n
           id: currentId + 2,
           active: false,
           type: 'CUSTOM_TEXT',
-          value: '  clear - clear the terminal screen',
+          value: '  clear     -  clear the terminal screen',
         },
         {
           id: currentId + 3,
           active: false,
           type: 'CUSTOM_TEXT',
-          value: '  cv - prints out my work experience',
+          value: '  cv        -  prints out my work experience',
         },
         {
           id: currentId + 4,
           active: false,
           type: 'CUSTOM_TEXT',
-          value: `  tech - prints out the technologies I've worked with`,
+          value: `  tech      -  prints out the technologies I've worked with`,
+        },
+        {
+          id: currentId + 5,
+          active: false,
+          type: 'CUSTOM_TEXT',
+          value: `  social    -  social media presence`,
         },
       ];
     }
     default:
-      return [];
+      return [
+        {
+          id: currentId + 1,
+          active: false,
+          type: 'CUSTOM_TEXT',
+          value: `Command '${executedCommand.value}' not found. Run 'help' to see the available commands.`,
+        },
+      ];
   }
 };
 
 const generateNewRows = (terminalState: ITerminalState, executedCommand: ITerminalRow): ITerminalRow[] => {
-  if (executedCommand.value === '> clear') {
+  if (executedCommand.value === 'clear') {
     return defaultState.rows;
   }
 
@@ -90,7 +103,7 @@ export function Terminal() {
 
   useEffect(() => {
     if (terminalRef) {
-      (terminalRef.current?.lastChild as HTMLInputElement)?.focus();
+      ((terminalRef.current?.lastChild as HTMLDivElement).lastChild as HTMLInputElement)?.focus();
     }
   }, [terminalState]);
 
@@ -108,7 +121,7 @@ export function Terminal() {
           ...terminalState.rows.filter(r => r.id !== commandId),
           {
             ...currentCommand,
-            value: '> ',
+            value: '',
           },
         ].sort((a, b) => a.id - b.id),
       });
@@ -118,7 +131,7 @@ export function Terminal() {
           ...terminalState.rows.filter(r => r.id !== commandId),
           {
             ...currentCommand,
-            value: trimmed,
+            value,
           },
         ].sort((a, b) => a.id - b.id),
       });
