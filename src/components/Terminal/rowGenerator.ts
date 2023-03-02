@@ -37,6 +37,9 @@ const createCommandsBasedOnAction = (executedCommand: ITerminalRow, currentId: n
     case 'social': {
       return generateTextForSocial(currentId);
     }
+    case '': {
+      return [];
+    }
     default:
       return [
         {
