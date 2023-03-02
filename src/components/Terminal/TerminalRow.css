@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.terminal-row > input {
+.terminal-row-input {
   caret-color: transparent;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -18,4 +18,8 @@
 .terminal-row:focus {
   /* TODO GJK: just for debugging - remove later */
   border: yellow; 
+}
+
+.input-with-href {
+  width: 15%;
 }

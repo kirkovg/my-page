@@ -10,9 +10,17 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
   if (row.type === 'CUSTOM_TEXT') {
     return (
       <div className="terminal-row">
-        <input id={row.id.toString()} type="text" defaultValue={row.value} />
-        {row.href && <a href={row.href}>{row.href}</a>}
-        {/* TODO GJK: fix styling for hrefs */}
+        <input
+          id={row.id.toString()}
+          type="text"
+          defaultValue={row.value}
+          className={`terminal-row-input ${row.href ? 'input-with-href' : ''}`}
+        />
+        {row.href && (
+          <a href={row.href} target="_blank">
+            {row.href}
+          </a>
+        )}
       </div>
     );
   }
@@ -24,6 +32,7 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
         id={row.id.toString()}
         type="text"
         value={row.value}
+        className="terminal-row-input"
         onKeyUp={e => {
           if (e.key === 'Enter') {
             commandEntered(row);
