@@ -24,9 +24,45 @@ export const generateNewRows = (terminalState: ITerminalState, executedCommand: 
   ];
 
   newRows.push(createNewEmptyCommand(newRows.length));
-  newRows.sort((a, b) => a.id - b.id);
+  sortRows(newRows);
 
   return newRows;
+};
+
+export const updateCommandValue = (
+  newValue: string,
+  currentCommandId: number,
+  terminalState: ITerminalState,
+  terminalStateSetter: React.Dispatch<React.SetStateAction<ITerminalState>>
+): void => {
+  const trimmed = newValue.trim();
+  const currentCommand = terminalState.rows.find(r => r.id === currentCommandId);
+
+  if (!currentCommand) {
+    throw new Error('Should not happen!');
+  }
+
+  if (!trimmed) {
+    terminalStateSetter({
+      rows: sortRows([
+        ...terminalState.rows.filter(r => r.id !== currentCommandId),
+        {
+          ...currentCommand,
+          value: '',
+        },
+      ]),
+    });
+  } else {
+    terminalStateSetter({
+      rows: sortRows([
+        ...terminalState.rows.filter(r => r.id !== currentCommandId),
+        {
+          ...currentCommand,
+          value: newValue,
+        },
+      ]),
+    });
+  }
 };
 
 const createCommandsBasedOnAction = (executedCommand: ITerminalRow, currentId: number): ITerminalRow[] => {
@@ -134,4 +170,8 @@ const createNewEmptyCommand = (currentId: number): ITerminalRow => {
     active: true,
     value: '',
   };
+};
+
+const sortRows = (rows: ITerminalRow[]): ITerminalRow[] => {
+  return rows.sort((a, b) => a.id - b.id);
 };
