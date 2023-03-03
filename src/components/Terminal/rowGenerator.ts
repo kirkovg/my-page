@@ -37,6 +37,9 @@ const createCommandsBasedOnAction = (executedCommand: ITerminalRow, currentId: n
     case 'social': {
       return generateTextForSocial(currentId);
     }
+    case 'tech': {
+      return generateTextForTechnologies(currentId);
+    }
     case '': {
       return [];
     }
@@ -83,6 +86,24 @@ const generateTextForHelp = (currentId: number): ITerminalRow[] => {
       active: false,
       type: 'CUSTOM_TEXT',
       value: '  clear     -  clear the terminal screen',
+    },
+  ];
+};
+
+const generateTextForTechnologies = (currentId: number): ITerminalRow[] => {
+  return [
+    {
+      id: currentId + 1,
+      active: false,
+      type: 'CUSTOM_TEXT',
+      value: '  Programming Languages         - Javascript/Typescript, Java, SQL, HTML, CSS',
+    },
+    {
+      id: currentId + 2,
+      active: false,
+      type: 'CUSTOM_TEXT',
+      value:
+        '  Technologies & Frameworks     - Node.js, React.js, Next.js, Angular, Spring, git, Docker, K8s, GraphQL, Postman, Gitlab/Github',
     },
   ];
 };
