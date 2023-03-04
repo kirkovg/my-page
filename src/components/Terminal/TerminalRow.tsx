@@ -11,7 +11,7 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
     return (
       <div className="terminal-row">
         <input
-          id={row.id.toString()}
+          id={'row-' + row.id.toString()}
           type="text"
           readOnly={!row.active}
           defaultValue={row.value}
@@ -30,7 +30,7 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
     <div className="terminal-row">
       <span>&gt;&nbsp;</span>
       <input
-        id={row.id.toString()}
+        id={'row-' + row.id.toString()}
         type="text"
         value={row.value}
         readOnly={!row.active}

@@ -1,7 +1,7 @@
 export const defaultState: ITerminalState = {
   rows: [
     {
-      id: 1,
+      id: 0,
       type: 'COMMAND',
       active: true,
       value: '',
@@ -20,10 +20,10 @@ export const generateNewRows = (terminalState: ITerminalState, executedCommand: 
       ...executedCommand,
       active: false,
     },
-    ...createCommandsBasedOnAction(executedCommand, terminalState.rows.length),
+    ...createCommandsBasedOnAction(executedCommand, terminalState.rows.length - 1),
   ];
 
-  newRows.push(createNewEmptyCommand(newRows.length));
+  newRows.push(createNewEmptyCommand(newRows.length - 1));
   sortRows(newRows);
 
   return newRows;

@@ -10,7 +10,7 @@ export function Terminal() {
 
   useEffect(() => {
     if (terminalRef) {
-      ((terminalRef.current?.lastChild as HTMLDivElement).lastChild as HTMLInputElement)?.focus();
+      ((terminalRef.current?.lastChild as HTMLDivElement)?.lastChild as HTMLInputElement)?.focus();
     }
   }, [terminalState]);
 
