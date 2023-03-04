@@ -15,7 +15,7 @@ export const generateNewRows = (terminalState: ITerminalState, executedCommand: 
   }
 
   const newRows = [
-    ...terminalState.rows.filter(c => c.id !== executedCommand.id),
+    ...terminalState.rows.filter((c) => c.id !== executedCommand.id),
     {
       ...executedCommand,
       active: false,
@@ -33,10 +33,10 @@ export const updateCommandValue = (
   newValue: string,
   currentCommandId: number,
   terminalState: ITerminalState,
-  terminalStateSetter: React.Dispatch<React.SetStateAction<ITerminalState>>
+  terminalStateSetter: React.Dispatch<React.SetStateAction<ITerminalState>>,
 ): void => {
   const trimmed = newValue.trim();
-  const currentCommand = terminalState.rows.find(r => r.id === currentCommandId);
+  const currentCommand = terminalState.rows.find((r) => r.id === currentCommandId);
 
   if (!currentCommand) {
     throw new Error('Should not happen!');
@@ -45,7 +45,7 @@ export const updateCommandValue = (
   if (!trimmed) {
     terminalStateSetter({
       rows: sortRows([
-        ...terminalState.rows.filter(r => r.id !== currentCommandId),
+        ...terminalState.rows.filter((r) => r.id !== currentCommandId),
         {
           ...currentCommand,
           value: '',
@@ -55,7 +55,7 @@ export const updateCommandValue = (
   } else {
     terminalStateSetter({
       rows: sortRows([
-        ...terminalState.rows.filter(r => r.id !== currentCommandId),
+        ...terminalState.rows.filter((r) => r.id !== currentCommandId),
         {
           ...currentCommand,
           value: newValue,

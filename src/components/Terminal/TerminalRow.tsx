@@ -35,12 +35,12 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
         value={row.value}
         readOnly={!row.active}
         className="terminal-row-input"
-        onKeyUp={e => {
+        onKeyUp={(e) => {
           if (e.key === 'Enter') {
             commandEntered(row);
           }
         }}
-        onChange={e => {
+        onChange={(e) => {
           if (row.active) {
             updateCommandValue(e.target.value, row.id);
           }

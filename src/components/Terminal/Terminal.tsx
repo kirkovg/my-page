@@ -18,12 +18,12 @@ export function Terminal() {
     <div className="terminal" ref={terminalRef}>
       <p>Welcome to the home page of Gjorgji Kirkov! Execute the 'help' command to get started.</p>
       <>
-        {terminalState.rows.map(r => (
+        {terminalState.rows.map((r) => (
           <TerminalRow
             key={r.id}
             row={r}
             updateCommandValue={(value, rowId) => updateCommandValue(value, rowId, terminalState, setTerminalState)}
-            commandEntered={row =>
+            commandEntered={(row) =>
               setTerminalState({
                 rows: generateNewRows(terminalState, row),
               })
