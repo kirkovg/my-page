@@ -20,7 +20,7 @@ jobs:
           node-version: 'lts/hydrogen'
 
       - name: Install dependencies
-        uses: npm ci
+        run: npm ci
 
       - name: Build project
         run: npm run build
