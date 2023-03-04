@@ -109,7 +109,7 @@ const generateTextForHelp = (currentId: number): ITerminalRow[] => {
       id: currentId + 3,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: `  tech      -  prints out the technologies I've worked with`,
+      value: `  tech      -  prints out the technologies I am working with`,
     },
     {
       id: currentId + 4,
