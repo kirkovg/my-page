@@ -126,6 +126,12 @@ const generateTextForHelp = (currentId: number): ITerminalRow[] => {
       type: 'CUSTOM_TEXT',
       value: '  clear     -  clear the terminal screen',
     },
+    {
+      id: currentId + 6,
+      active: false,
+      type: 'CUSTOM_TEXT',
+      value: '  help      -  prints this help text output',
+    },
   ];
 };
 
