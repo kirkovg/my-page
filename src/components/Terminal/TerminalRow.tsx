@@ -15,7 +15,7 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
           type="text"
           readOnly={!row.active}
           defaultValue={row.value}
-          className={`terminal-row-input ${row.href ? 'input-with-href' : ''}`}
+          className={`terminal-row-input ${row.href ? 'input-with-href' : ''} ${row.bold ? 'bold' : ''}`}
         />
         {row.href && (
           <a href={row.href} target="_blank">

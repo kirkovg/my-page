@@ -8,4 +8,5 @@ type ITerminalRow = {
   value: string;
   type: 'COMMAND' | 'CUSTOM_TEXT';
   href?: string;
+  bold?: boolean;
 };

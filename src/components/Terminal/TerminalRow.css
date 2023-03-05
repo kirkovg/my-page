@@ -12,14 +12,18 @@
   color: #cccccc;
   font-family: inherit;
   font-size: inherit;
-  width: 80%;
+  width: 95%;
 }
 
 .terminal-row:focus {
   /* TODO GJK: just for debugging - remove later */
-  border: yellow; 
+  border: yellow;
 }
 
 .input-with-href {
   width: 15%;
+}
+
+.bold {
+  font-weight: bold;
 }
