@@ -3,7 +3,7 @@
 }
 
 .terminal-row-input {
-  caret-color: transparent;
+  caret-color: inherit;
   margin-top: 8px;
   margin-bottom: 8px;
   background-color: inherit;
@@ -15,9 +15,8 @@
   width: 95%;
 }
 
-.terminal-row:focus {
-  /* TODO GJK: just for debugging - remove later */
-  border: yellow;
+.terminal-row-input:focus {
+  outline: none;
 }
 
 .input-with-href {
