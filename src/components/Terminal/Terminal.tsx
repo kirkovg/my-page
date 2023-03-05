@@ -16,7 +16,10 @@ export function Terminal() {
 
   return (
     <div className="terminal" ref={terminalRef}>
-      <p>Welcome to the home page of Gjorgji Kirkov! Execute the 'help' command to get started.</p>
+      <p>
+        Welcome to the home page of Software Engineer <strong>Gjorgji Kirkov</strong>! Execute the 'help' command to get
+        started.
+      </p>
       <>
         {terminalState.rows.map((r) => (
           <TerminalRow
