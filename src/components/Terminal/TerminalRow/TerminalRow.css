@@ -1,5 +1,6 @@
 .terminal-row {
   width: 100%;
+  display: flex;
 }
 
 .terminal-row-input {
