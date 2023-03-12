@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { defaultState, generateNewRows, updateCommandValue } from './rowManager';
+import { defaultState, generateNewRows, updateCommandValue } from './utils/rowManager';
 import './Terminal.css';
-import { TerminalRow } from './TerminalRow';
+import { TerminalRow } from './TerminalRow/TerminalRow';
 
 export function Terminal() {
   const [terminalState, setTerminalState] = useState<ITerminalState>(defaultState);
