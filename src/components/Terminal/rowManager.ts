@@ -101,36 +101,42 @@ const generateTextForHelp = (currentId: number): ITerminalRow[] => {
       active: false,
       type: 'CUSTOM_TEXT',
       value: 'These are the following commands which can be used:',
+      bold: true,
     },
     {
       id: currentId + 2,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  cv        -  prints out my work experience',
+      listItem: true,
+      value: 'cv - prints out my work experience',
     },
     {
       id: currentId + 3,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: `  tech      -  prints out the technologies I am working with`,
+      listItem: true,
+      value: 'tech - prints out the technologies I am working with',
     },
     {
       id: currentId + 4,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: `  social    -  social media presence`,
+      listItem: true,
+      value: 'social - social media presence',
     },
     {
       id: currentId + 5,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  clear     -  clear the terminal screen',
+      listItem: true,
+      value: 'clear - clear the terminal screen',
     },
     {
       id: currentId + 6,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  help      -  prints this help text output',
+      listItem: true,
+      value: 'help - prints this help text output',
     },
   ];
 };
@@ -141,14 +147,16 @@ const generateTextForTechnologies = (currentId: number): ITerminalRow[] => {
       id: currentId + 1,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  Programming Languages         - Javascript/Typescript, Java, SQL, HTML, CSS',
+      listItem: true,
+      value: 'Programming Languages - Javascript/Typescript, Java, SQL, HTML, CSS',
     },
     {
       id: currentId + 2,
       active: false,
       type: 'CUSTOM_TEXT',
+      listItem: true,
       value:
-        '  Technologies & Frameworks     - Node.js, React.js, Next.js, Angular, Spring, git, Docker, K8s, GraphQL, RabbitMQ, Postman, Gitlab/Github',
+        'Technologies & Frameworks - Node.js, React.js, Next.js, Angular, Spring, git, Docker, K8s, GraphQL, RabbitMQ, Postman, Gitlab/Github',
     },
   ];
 };
@@ -159,14 +167,18 @@ const generateTextForSocial = (currentId: number): ITerminalRow[] => {
       id: currentId + 1,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  Github       -  ',
+      value: 'GitHub',
       href: 'https://github.com/kirkovg',
+      bold: true,
+      listItem: true,
     },
     {
       id: currentId + 2,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: '  LinkedIn     -  ',
+      value: 'LinkedIn',
+      listItem: true,
+      bold: true,
       href: 'https://www.linkedin.com/in/gjorgji-kirkov/',
     },
   ];
@@ -180,85 +192,91 @@ const generateTextForCv = (currentId: number): ITerminalRow[] => {
       type: 'CUSTOM_TEXT',
       value: 'Experience',
       bold: true,
+      header: true,
     },
     {
       id: currentId + 2,
       active: false,
       type: 'CUSTOM_TEXT',
-      value: 'Bright Marbles | Senior Software Engineer             Skopje, North Macedonia (January 2022 - present)',
+      value: 'Bright Marbles | Senior Software Engineer in Skopje, North Macedonia (January 2022 - present)',
+      bold: true,
     },
     {
       id: currentId + 3,
       active: false,
       type: 'CUSTOM_TEXT',
+      listItem: true,
       value:
-        ' * Working on the development of a platform for buying & registration of domain names, email, web hosting & web shop products serving 1M+ of domains',
+        'Working on the development of a platform for buying & registration of domain names, email, web hosting & web shop products serving 1M+ of domains',
     },
     {
       id: currentId + 4,
       active: false,
       type: 'CUSTOM_TEXT',
+      listItem: true,
       value:
-        ' * Led the web frontend development of an MVP of a web 3.0, fan-first, e-commerce platform revolutionizing the live event experience',
+        'Led the web frontend development of an MVP of a web 3.0, fan-first, e-commerce platform revolutionizing the live event experience',
     },
-    createEmptyRow(currentId + 5),
+    {
+      id: currentId + 5,
+      active: false,
+      type: 'CUSTOM_TEXT',
+      value: 'Netcetera | Senior Software Engineer in Skopje, North Macedonia (November 2017 - January 2022)',
+      bold: true,
+    },
     {
       id: currentId + 6,
       active: false,
       type: 'CUSTOM_TEXT',
+      listItem: true,
       value:
-        'Netcetera | Senior Software Engineer                  Skopje, North Macedonia (November 2017 - January 2022)',
+        'Co-led the frontend development of a real estate evaluation platform for the DACH region, reducing the evaluation process in just a few clicks',
     },
     {
       id: currentId + 7,
       active: false,
       type: 'CUSTOM_TEXT',
+      listItem: true,
       value:
-        ' * Co-led the frontend development of a real estate evaluation platform for the DACH region, reducing the evaluation process in just a few clicks',
+        'Provided technical expertise & reviews for the web frontend tech stack on a Swiss-based financial planning platform',
     },
     {
       id: currentId + 8,
       active: false,
       type: 'CUSTOM_TEXT',
-      value:
-        ' * Provided technical expertise & reviews for the web frontend tech stack on a Swiss-based financial planning platform',
+      value: 'Netcetera | Software Engineering Intern in Ohrid, North Macedonia (July 2017 - September 2017)',
+      bold: true,
     },
-    createEmptyRow(currentId + 9),
+    {
+      id: currentId + 9,
+      active: false,
+      type: 'CUSTOM_TEXT',
+      listItem: true,
+      value:
+        'Worked on the development and extensions of the Web Service API of a real estate valuation platform for the DACH region',
+    },
     {
       id: currentId + 10,
       active: false,
       type: 'CUSTOM_TEXT',
-      value:
-        'Netcetera | Software Engineering Intern               Ohrid, North Macedonia (July 2017 - September 2017)',
+      header: true,
+      value: 'Education',
+      spacingTop: true,
+      bold: true,
     },
     {
       id: currentId + 11,
       active: false,
       type: 'CUSTOM_TEXT',
-      value:
-        ' * Worked on the development and extensions of the Web Service API of a real estate valuation platform for the DACH region',
-    },
-    createEmptyRow(currentId + 12),
-    createEmptyRow(currentId + 13),
-    {
-      id: currentId + 14,
-      active: false,
-      type: 'CUSTOM_TEXT',
-      value: 'Education',
+      value: 'University of St. Cyril and Methodius in Skopje, North Macedonia (September 2014 - October 2018)',
       bold: true,
     },
     {
-      id: currentId + 15,
+      id: currentId + 12,
       active: false,
       type: 'CUSTOM_TEXT',
-      value:
-        'University of St. Cyril and Methodius                 Skopje, North Macedonia (September 2014 - October 2018)',
-    },
-    {
-      id: currentId + 16,
-      active: false,
-      type: 'CUSTOM_TEXT',
-      value: ' * BSc. in Computer Science and Engineering; Special focus on scalable web application development',
+      listItem: true,
+      value: 'BSc. in Computer Science and Engineering; Special focus on scalable web application development',
     },
   ];
 };
@@ -268,15 +286,6 @@ const createNewEmptyCommand = (currentId: number): ITerminalRow => {
     id: currentId + 1,
     type: 'COMMAND',
     active: true,
-    value: '',
-  };
-};
-
-const createEmptyRow = (id: number): ITerminalRow => {
-  return {
-    id,
-    active: false,
-    type: 'CUSTOM_TEXT',
     value: '',
   };
 };

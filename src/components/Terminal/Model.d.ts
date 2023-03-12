@@ -9,4 +9,7 @@ type ITerminalRow = {
   type: 'COMMAND' | 'CUSTOM_TEXT';
   href?: string;
   bold?: boolean;
+  listItem?: boolean;
+  header?: boolean;
+  spacingTop?: boolean;
 };

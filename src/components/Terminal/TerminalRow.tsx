@@ -10,16 +10,25 @@ export function TerminalRow({ row, updateCommandValue, commandEntered }: Termina
   if (row.type === 'CUSTOM_TEXT') {
     return (
       <div className="terminal-row">
-        <input
-          id={'row-' + row.id.toString()}
-          type="text"
-          readOnly={!row.active}
-          defaultValue={row.value}
-          className={`terminal-row-input ${row.href ? 'input-with-href' : ''} ${row.bold ? 'bold' : ''}`}
-        />
-        {row.href && (
+        {row.value && !row.header && !row.listItem && (
+          <p id={'row-' + row.id.toString()} className={`terminal-row-input ${row.bold ? 'bold' : ''}`}>
+            {row.value}
+          </p>
+        )}
+        {row.header && (
+          <h2 className={`terminal-row-input header ${row.spacingTop ? 'spacing-top' : ''}`}>{row.value}</h2>
+        )}
+        {row.listItem && row.href && (
+          <li className="terminal-row-input">
+            <a href={row.href} target="_blank">
+              {row.value}
+            </a>
+          </li>
+        )}
+        {row.listItem && !row.href && <li className="terminal-row-input">{row.value}</li>}
+        {row.href && !row.listItem && (
           <a href={row.href} target="_blank">
-            {row.href}
+            {row.value}
           </a>
         )}
       </div>

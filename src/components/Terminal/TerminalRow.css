@@ -4,15 +4,22 @@
 
 .terminal-row-input {
   caret-color: inherit;
-  margin-top: 8px;
-  margin-bottom: 8px;
   background-color: inherit;
-  height: 24px;
   border: none;
   color: #cccccc;
   font-family: inherit;
   font-size: inherit;
   width: 95%;
+  margin: 0;
+}
+
+.header {
+  font-size: 26px;
+  margin: 0;
+}
+
+.spacing-top {
+  margin-top: 24px;
 }
 
 .terminal-row-input:focus {
